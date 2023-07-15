@@ -1,6 +1,7 @@
 package com.fulldeveloper.dslist.dto;
 
 import com.fulldeveloper.dslist.entities.Game;
+import com.fulldeveloper.dslist.projections.GameMinProjection;
 
 public class GameMinDTO { //CLASSE ONDE SÓ TERÁ O QUE REALMENTE ME INTERESSA PARA O FRONT-END
 	
@@ -19,6 +20,14 @@ public class GameMinDTO { //CLASSE ONDE SÓ TERÁ O QUE REALMENTE ME INTERESSA P
 		year = entity.getYear();
 		imgUrl = entity.getImgUrl();
 		shortDescription = entity.getShortDescription();
+	}
+	
+	public GameMinDTO(GameMinProjection projection) {
+		id = projection.getId();
+		title = projection.getTitle();
+		year = projection.getYear();
+		imgUrl = projection.getImgUrl();
+		shortDescription = projection.getShortDescription();
 	}
 
 	//GETTERS
